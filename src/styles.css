@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+	background-color: #3498db; 
+    color: #fff; 
+    font-family: 'Arial', sans-serif;
+	padding-top: 10vh;	
+}
+
+form {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5); /* ultimo paramatero para opacidad */
+  }
+  
+  .form-container {
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px); /* Aplica un desenfoque al fondo del formulario */
+  }
+  
+  h4 {
+    color: #333; 
+  }
+  
+  label {
+    color: #333; 
+  }
