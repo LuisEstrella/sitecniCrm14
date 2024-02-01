@@ -87,7 +87,11 @@ export class RegisterUserComponent implements OnInit {
       this.userService.putCustomer(userModel).then(response =>{
         this.spinner.hide();
         if(response.succeeded){
-          SweetAlertMessageHelpers.Success("Hecho",response.message);
+          if(response.message)
+            SweetAlertMessageHelpers.Success("Hecho",response.message);
+          else
+            SweetAlertMessageHelpers.Success(response.messages[0], response.messages[1]);
+
           this.router.navigate(['']);
         }else{
           if(response.message)

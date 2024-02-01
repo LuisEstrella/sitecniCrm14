@@ -58,7 +58,10 @@ export class LoginComponent implements OnInit {
       this.userService.postCustomer(userModel).then(response => {
         this.spinner.hide();
         if(response.succeeded){
+          if(response.message)
           SweetAlertMessageHelpers.Success("Hecho",response.message);
+        else
+          SweetAlertMessageHelpers.Success(response.messages[0], response.messages[1]);
           // this.router.navigate([''], {queryParams: {messageEnum: 3}}); // Redirigir a una página de error
           this.router.navigate(['']); // Redirigir a una página de error 
         }else {
